@@ -3,7 +3,7 @@
 # Miguel Luna
 
 import re
-from operator import *
+from collections import Counter
 import time
 
 # Function to extract each word from the given text, using regular expressions.
@@ -26,19 +26,9 @@ def slice_per(source, step):
       
 # Function to count the frequencies of each word.
 def count_words(word_list):
-    words = list()
-    frequencies = list()
+    return Counter(word_list)
 
-    for current_word in word_list: 
-        if current_word not in words:
-            words.append(current_word)
-            frequencies.append(1)
-        else:
-            frequencies[words.index(current_word)] += 1
-
-    return list(zip(words, frequencies))
-
-filepath = "/Users/miguelluna/Documents/GitHub/word-count/test.txt"
+filepath = "/Users/miguelluna/Documents/GitHub/word-count/text files/test.txt"
 
 t = time.time()
 
@@ -49,8 +39,8 @@ reader.close()
 words_list = extract_words(text)
 results = count_words(words_list)
 
-for frequency in results:
-    print(frequency)
+for count in results:
+    print (count, "\t- ", results[count])
 
 print("Done. Time taken: {}".format(time.time() - t) + " seconds\n")
 

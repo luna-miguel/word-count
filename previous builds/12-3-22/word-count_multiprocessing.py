@@ -33,7 +33,7 @@ def count_words(word_list, output):
     frequencies = list()
 
     for current_word in word_list: 
-        if current_word not in words:   # New word found
+        if current_word not in words:
             words.append(current_word)
             frequencies.append(1)
         else:
@@ -63,7 +63,7 @@ def aggregate(results):
 
 if __name__ == "__main__":
 
-    filepath = "/Users/miguelluna/Documents/GitHub/word-count/test.txt"
+    filepath = "/Users/miguelluna/Documents/GitHub/word-count/text files/test.txt"
 
     t = time.time()
 
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     total = aggregate(results)
 
     for frequency in total:
-        print(frequency)
+        print(frequency[0], "\t- ", frequency[1])
 
     print("Done. Time taken: {}".format(time.time() - t) + " seconds\n")
     
