@@ -26,9 +26,7 @@ For example, if we are using three processes, the modified code would look like:
     split_list = slice_per(words_list, 3)
 
     p1 = multiprocessing.Process(target = count_words, args = (split_list[0], output, ))
-    
     p2 = multiprocessing.Process(target = count_words, args = (split_list[1], output, ))
-    
     p3 = multiprocessing.Process(target = count_words, args = (split_list[2], output, )) 
     
     processes = [p1, p2, p3]
