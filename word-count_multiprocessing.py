@@ -63,7 +63,7 @@ def aggregate(results):
 
 if __name__ == "__main__":
 
-    filepath = "/Users/miguelluna/Documents/GitHub/word-count/text files/test.txt"
+    filepath = "/Users/miguelluna/Documents/GitHub/word-count/text files/ttt.txt"
 
     t = time.time()
 
@@ -73,13 +73,19 @@ if __name__ == "__main__":
 
     words_list = extract_words(text)
  
-    split_list = slice_per(words_list, 3)
+    split_list = slice_per(words_list, 8)
+    print("Number of threads: ", len(split_list))
 
     p1 = multiprocessing.Process(target = count_words, args = (split_list[0], output, )) 
     p2 = multiprocessing.Process(target = count_words, args = (split_list[1], output, )) 
     p3 = multiprocessing.Process(target = count_words, args = (split_list[2], output, )) 
-
-    processes = [p1, p2, p3]
+    p4 = multiprocessing.Process(target = count_words, args = (split_list[3], output, )) 
+    p5 = multiprocessing.Process(target = count_words, args = (split_list[4], output, )) 
+    p6 = multiprocessing.Process(target = count_words, args = (split_list[5], output, ))
+    p7 = multiprocessing.Process(target = count_words, args = (split_list[6], output, )) 
+    p8 = multiprocessing.Process(target = count_words, args = (split_list[7], output, )) 
+    
+    processes = [p1, p2, p3, p4, p5, p6, p7, p8]
 
     for p in processes:
         p.start()

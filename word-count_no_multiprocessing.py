@@ -38,7 +38,7 @@ def count_words(word_list):
 
     return list(zip(words, frequencies)) # combine words and frequencies into tuples
 
-filepath = "/Users/miguelluna/Documents/GitHub/word-count/text files/test.txt"
+filepath = "/Users/miguelluna/Documents/GitHub/word-count/text files/ttt.txt"
 
 t = time.time()
 
