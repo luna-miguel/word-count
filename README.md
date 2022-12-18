@@ -5,7 +5,10 @@ CSC 113 - Programming Language Fall 2022
 This program is designed to count the frequencies of words in a given text file.
 
 Text files are located in the "text files" folder. When running the program, find the line containing the variable "filepath" in the main function and
-modify it to hold the right filepath.
+modify it to hold the right filepath. For example, this is the line I use to use file "ttt.txt" from my GitHub folder in Documents:
+```
+filepath = "/Users/miguelluna/Documents/GitHub/word-count/text files/ttt.txt"
+```
 
 To modify the amount of processes if using the code that uses multiprocessing:
 1. Change the parameter number in the function call of slice_per assigned to split_list
