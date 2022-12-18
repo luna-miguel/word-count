@@ -74,7 +74,7 @@ if __name__ == "__main__":
     words_list = extract_words(text)
  
     split_list = slice_per(words_list, 8)
-    print("Number of threads: ", len(split_list))
+    print("Number of processes: ", len(split_list))
 
     p1 = multiprocessing.Process(target = count_words, args = (split_list[0], output, )) 
     p2 = multiprocessing.Process(target = count_words, args = (split_list[1], output, )) 
